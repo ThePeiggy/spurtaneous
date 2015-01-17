@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-	user = User.new(email: "admin@exmaple.com", password: "password", password_confirmation: "password", firstname: "Admin", lastname: "User")
+	user = User.new(email: "admin@example.com", password: "password", password_confirmation: "password", firstname: "Admin", lastname: "User")
 	user.save
-	user.causes.new(name: "Test Cause", description: "Test description beep beep").save
-	user.causes.new(name: "Test Cause 2", description: "Test description beep beep 2 2 2").save
+	user.causes.new(name: "Test Cause", description: "Test description beep beep", unit_donation: 1).save
+	user.causes.new(name: "Test Cause 2", description: "Test description beep beep 2 2 2", unit_donation: 1).save
