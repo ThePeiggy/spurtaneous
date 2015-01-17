@@ -1,15 +1,17 @@
-<%= form_for :user do |f| %>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
+<div class="center">
 
-  <p>
-    <%= f.label :password %><br>
-    <%= f.text_area :password %>
-  </p>
+  <%= form_for :user do |f| %>
+    <p>
+      <%= f.text_field :email, :placeholder => "Email" %>
+    </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+    <p>
+      <%= f.text_field :password, :placeholder => "Password" %>
+    </p>
+
+    <p>
+      <%= f.submit 'Register', :class => 'btn btn-lg btn-primary' %>
+    </p>
+  <% end %>
+
+</div>
