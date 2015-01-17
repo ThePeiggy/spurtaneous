@@ -1,25 +1,28 @@
 <% @causes.each do |cause| %>
 	<div class="jumbotron">
-		<div class="span8">
-			<div class="row-fluid">
-				<h4><%= cause.name %></h4>
+		<div class="container-fluid">
+			<div class="col-md-10">
+				<div class="row top-align">
+					<h3><%= cause.name %></h3>
+				</div>
+				<div class="row top-align">
+					<%= cause.description %>
+				</div>
 			</div>
-			<div class="row-fluid">
-				<p><%= cause.description %></p>
-			</div>
-		</div>
-		<div class="span4">
-			<div class="row-fluid">
-				Hits: <%= cause.hits %>
-			</div>
-			<div class="row-fluid">
-				Raised: <%= cause.money_raised %>
-			</div>
-			<div class="row-fluid">
-				Hit Impact: <%= cause.unit_donation %>
-			</div>
-			<div class="row-fluid">
-				<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-primary', path: add_hit_cause_path(cause)%>
+			<div class="col-md-2">
+				<div class="row cause-stats">
+					Hits: <%= cause.hits %>
+				</div>
+				<div class="row cause-stats">
+					Raised: <%= cause.money_raised %>
+				</div>
+				<div class="row cause-stats">
+					Hit Impact: <%= cause.unit_donation %>
+				</div>
+				<br>
+				<div class="row cause-stats">
+					<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-primary', path: add_hit_cause_path(cause)%>
+				</div>
 			</div>
 		</div>
 	</div>
