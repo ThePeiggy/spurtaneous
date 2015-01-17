@@ -3,7 +3,7 @@ class Cause < ActiveRecord::Base
 	validates :name, presence: true
 
 	def add_hit
-		update_attribute(hits: hits + 1)
+		update_attribute(:hits, hits + 1)
 	end
 
 	def money_raised
