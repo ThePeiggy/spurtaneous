@@ -1,12 +1,19 @@
 
 
 <p>
+  <strong>Name:</strong>
+  <%= @user.firstname + ' ' + @user.lastname %>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+
+<% @user.causes.each do |c| %>
+	<div class="jumbotron">
+	  <p id="cause-<%= c.id %>">Test Cause: <%= c.name %> ID: <%= c.id %></p>	
+	</div>
+<% end %>
  
-<!-- <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p> -->
 
