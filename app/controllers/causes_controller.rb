@@ -1,5 +1,7 @@
 class CausesController < ApplicationController
 
+	before_filter :authorize
+	
 	def index
 		@causes = Cause.all
 	end
