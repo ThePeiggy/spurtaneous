@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true
 
 
-  def hit(cause)
+  def hit(cause_id)
+  	cause = Cause.find(cause_id)
   	cause.add_hit
   	#take money out
   end
