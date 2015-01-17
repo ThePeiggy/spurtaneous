@@ -2,6 +2,8 @@ class CausesController < ApplicationController
 
 	respond_to :json, only: :add_hit
 
+	before_filter :authorize
+
 	def index
 		@causes = Cause.all
 	end
