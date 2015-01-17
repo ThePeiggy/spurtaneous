@@ -1,5 +1,7 @@
 class CausesController < ApplicationController
 
+	respond_to :json, only: :add_hit
+
 	def index
 		@causes = Cause.all
 	end
@@ -7,6 +9,7 @@ class CausesController < ApplicationController
 	def add_hit
 		cause = Cause.find(cause_id_param)
 		cause.add_hit
+		respond_with cause.hits
 	end
 
     def cause_id_param

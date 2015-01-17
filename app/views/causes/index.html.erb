@@ -1,6 +1,22 @@
 <% @causes.each do |cause| %>
 	<div class="jumbotron">
-		<p>Test Cause: <%= cause.name %></p>
-		<%= link_to "Hit", add_hit_cause_path(cause), remote: true, class: 'btn btn-large btn-primary' %>
+		<p id="cause-<%= cause.id %>">Test Cause: <%= cause.name %> ID: <%= cause.id %></p>
+		<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-primary', path: add_hit_cause_path(cause)%>
 	</div>
 <% end %>
+
+<script>
+	$(function () {
+	    $("a[data-remote]").on('click', function () {
+	    	$.ajax({
+	            url: $(this).attr("path"),
+	            type:"get",
+            	dataType:"json",
+	            success: function(data) {
+	            	alert("Good! " + data + " hits")
+	            }
+	        });
+
+	    });
+	});
+</script>
