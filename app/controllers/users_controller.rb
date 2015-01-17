@@ -19,6 +19,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def store_token
+    @current_user.venmo_token = params[:access_token]
+    @current_user.save
+  end
+
   private
   	def user_params
   	  params.require(:user).permit(:email, :password, :password_confirmation, :firstname, :lastname)
