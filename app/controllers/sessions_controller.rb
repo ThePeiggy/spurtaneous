@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       # Save the user id inside the browser cookie. This is how we keep the user 
       # logged in when they navigate around our website.
       session[:user_id] = user.id
-      redirect_to '/'
+      redirect_to 'https://api.venmo.com/v1/oauth/authorize?client_id=2275&scope=make_payments'
     else
     # If user's login doesn't work, send them back to the login form.
       redirect_to '/login'

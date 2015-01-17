@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   root 'causes#index'
 
+  get '/token/' => 'users#store_token'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
