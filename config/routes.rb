@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :causes, only: [:index] do
+  resources :causes, only: [:index, :show] do
     get :add_hit, on: :member
   end
 

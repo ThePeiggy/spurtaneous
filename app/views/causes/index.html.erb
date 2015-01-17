@@ -3,7 +3,7 @@
 		<div class="container-fluid">
 			<div class="col-md-10">
 				<div class="row top-align">
-					<h3><%= cause.name %></h3>
+					<h3><%= link_to cause.name, cause_path(cause) %></h3>
 				</div>
 				<div class="row top-align">
 					<%= cause.description %>
@@ -17,11 +17,11 @@
 					Raised: $<%= '%.2f' % cause.money_raised %>
 				</div>
 				<div class="row cause-stats">
-					Hit Impact: <%= cause.unit_donation %>
+					Hit Impact: $<%= '%.2f' % cause.unit_donation %>
 				</div>
 				<br>
 				<div class="row cause-stats">
-					<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-primary', path: add_hit_cause_path(cause), hits_id: "num_hits_" + cause.id.to_s, raised_id: "money_raised_" + cause.id.to_s %>
+					<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-primary', id: "button_" + cause.id.to_s, path: add_hit_cause_path(cause), hits_id: "num_hits_" + cause.id.to_s, raised_id: "money_raised_" + cause.id.to_s, button_id: "button_" + cause.id.to_s %>
 				</div>
 			</div>
 		</div>
@@ -33,6 +33,7 @@
 	    $("a[data-remote]").on('click', function () {
 	    	hits_id = $(this).attr("hits_id")
 	    	raised_id = $(this).attr("raised_id")
+	    	button_id = $(this).attr("button_id")
 	    	$.ajax({
 	            url: $(this).attr("path"),
 	            type:"get",
@@ -40,6 +41,7 @@
 	            success: function(data) {
 	            	document.getElementById(hits_id).innerHTML = "Hits: " + data.hits
 	            	document.getElementById(raised_id).innerHTML = "Raised: $" + data.money_raised.toFixed(2)
+	            	document.getElementById(button_id).innerHTML = "Pummel"
 	            }
 	        });
 

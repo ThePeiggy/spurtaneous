@@ -14,6 +14,10 @@ class CausesController < ApplicationController
 		respond_with hits: cause.hits, money_raised: cause.money_raised
 	end
 
+	def show
+		@cause = Cause.find(params[:id])
+	end
+
     def cause_id_param
     	params.require(:id)
     end
