@@ -1,0 +1,12 @@
+.image {
+  font-size: 0;
+  text-align: center;
+  width: 200px;  /* Container's dimensions */
+  height: 50px;
+}
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-height: 100%;
+  max-width: 100%;
+}
