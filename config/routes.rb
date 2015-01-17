@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :causes, only: [:index]
+  resources :causes, only: [:index] do
+    get :add_hit, on: :member
+  end
 
 
   # Example of regular route:
