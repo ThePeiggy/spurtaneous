@@ -10,18 +10,18 @@
 				</div>
 			</div>
 			<div class="col-md-2">
-				<div class="row cause-stats">
+				<div class="row cause-stats" id="num_hits_<%= cause.id %>">
 					Hits: <%= cause.hits %>
 				</div>
-				<div class="row cause-stats">
-					Raised: <%= cause.money_raised %>
+				<div class="row cause-stats" id="money_raised_<%= cause.id %>">
+					Raised: $<%= '%.2f' % cause.money_raised %>
 				</div>
 				<div class="row cause-stats">
 					Hit Impact: <%= cause.unit_donation %>
 				</div>
 				<br>
 				<div class="row cause-stats">
-					<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-primary', path: add_hit_cause_path(cause)%>
+					<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-primary', path: add_hit_cause_path(cause), hits_id: "num_hits_" + cause.id.to_s, raised_id: "money_raised_" + cause.id.to_s %>
 				</div>
 			</div>
 		</div>
@@ -31,12 +31,15 @@
 <script>
 	$(function () {
 	    $("a[data-remote]").on('click', function () {
+	    	hits_id = $(this).attr("hits_id")
+	    	raised_id = $(this).attr("raised_id")
 	    	$.ajax({
 	            url: $(this).attr("path"),
 	            type:"get",
             	dataType:"json",
 	            success: function(data) {
-	            	alert("Good! " + data + " hits")
+	            	document.getElementById(hits_id).innerHTML = "Hits: " + data.hits
+	            	document.getElementById(raised_id).innerHTML = "Raised: $" + data.money_raised.toFixed(2)
 	            }
 	        });
 
