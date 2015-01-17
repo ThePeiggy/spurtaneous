@@ -11,7 +11,7 @@ class CausesController < ApplicationController
 	def add_hit
 		cause = Cause.find(cause_id_param)
 		cause.add_hit
-		respond_with cause.hits
+		respond_with hits: cause.hits, money_raised: cause.money_raised
 	end
 
     def cause_id_param
