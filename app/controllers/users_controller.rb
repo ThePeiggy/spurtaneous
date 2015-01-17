@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-
-  before_filter :authorize
   
+  before_filter :authorize, only: [:show]
+
   def show
     @user = User.find(params[:id])
   end
@@ -21,6 +21,6 @@ class UsersController < ApplicationController
 
   private
   	def user_params
-  	  params.require(:user).permit(:email, :password, :password_confirmation)
+  	  params.require(:user).permit(:email, :password, :password_confirmation, :firstname, :lastname)
   	end
 end
