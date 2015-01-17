@@ -12,51 +12,12 @@
                                            'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
   <body>
-    <nav class="navbar navbar-fixed-top navbar-inverse">
-      <% if @current_user %>
-        <div class="container">
-          <%= link_to "Casuality", '../', id: "logo" %>
-          <nav>
-            <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "Profile",   '../users/' + @current_user.id.to_s %></li>
-              <li><%= link_to "Help",   '#' %></li>
-              <li><%= link_to "Log out", '../logout' %></li>
-            </ul>
-          </nav>
-        </div>
-
-      <% else %>
-
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-              <span class="sr-only">Toggle Navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-              <%= link_to "Casuality", '../', id: "logo" %>
-          </div> <!-- end div class="navbar-header" -->
-          
-          <div class="collapse navbar-collapse" id="navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "Sign up",   '../signup' %></li>
-              <li><%= link_to "Log in", '../login' %></li>
-            </ul>
-          </div>  
-        </div>
-
-      <% end %>
-    </nav>
-
+    <%= render 'layouts/header' %>
     <div class="container-fluid">
-      <%= yield %>
+      <%= yield %>`
     </div>
   </body>
 </html>
