@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20150117123343) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",           null: false
+    t.string   "email"
+    t.string   "password"
     t.string   "venmo_token"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
