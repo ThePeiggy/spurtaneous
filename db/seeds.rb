@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-	user = User.new(email: "admin@example.com", password: "password", password_confirmation: "password", firstname: "Admin", lastname: "User", location: "Detroit, MI")
+	user = User.new(email: "admin@example.com", password: "password", password_confirmation: "password", firstname: "Admin", lastname: "User", location: "Detroit, MI", limit:1.00)
 	user.save
 	user.causes.new(name: "Single Parents’ Free Daycare", description: "SPFD is a non-profit organization started by Martha Kinsley. When she was 32, her husband was sent to prison. She then became a single mother, who faced the everyday fear of not having enough money to feed her children the next day. She couldn’t get a job, because she couldn’t afford a nanny. After facing this struggle, she opened a non-profit organisation in the hopes of helping single parents with their problems. With many branches of daycares open, she hopes to continue to expand their network of free daycare for children whose parents are getting out of a hard time.", unit_donation: 1,
 							image: "http://1.bp.blogspot.com/-cYIpih0xqV0/UbeGQQy8_gI/AAAAAAAAAo8/Hkm2uBICaXM/s1600/single-dad-cartoon.jpg",
