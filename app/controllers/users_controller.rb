@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.location = "Ann Arbor, MI"
     if @user.save
       redirect_to @user
     else
