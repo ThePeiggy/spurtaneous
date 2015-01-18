@@ -6,9 +6,9 @@
 					<strong>Registered Email:</strong>
 					<%= @user.email %><br>
 				 	<strong>Location:</strong>
-				 	<%= @user.location %>
-				  <strong>Limit:</strong>
-				  <%= @user.limit %> <br>
+				 	<%= @user.location %><br>
+				  <strong>Donation Limit: </strong>
+				  $<%= '%.2f' % @user.limit %> <br>
 				  <strong>Points:</strong>
 				  <%= link_to @user.points, rewards_path %> <br>
 				  <br>
