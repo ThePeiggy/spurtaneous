@@ -23,24 +23,26 @@
 
 <% @user.causes.each do |cause| %>
 	<div class="jumbotron">
-
 		<div class="container-fluid">
-
 			<div class="col-md-5">
-			<div class="row top-align">
-				<h3><%= cause.name %></h3>
-			</div>
-			<div class="row top-align">
-				<%= cause.description %>
-			</div>
-		</div>
-		<div class="col-md-5">
-			<div class="row top-align">
-				<div class = "causeimage">
-					<%= image_tag(cause.image) %>
+				<div class="row top-align">
+						<h3><%= link_to cause.name, cause_path(cause)%></h3>
+				</div>
+				<div class="row top-align">
+					<%= cause.location %>
+				</div>
+				<br>
+				<div class="row top-align">
+					<%= cause.description %>
 				</div>
 			</div>
-		</div>
+			<div class="col-md-5">
+				<div class="row top-align">
+					<div class="causeimage">
+						<%= image_tag(cause.image) %>
+					</div>
+				</div>
+			</div>
 			<div class="col-md-2">
 				<div class="row cause-stats" id="num_hits_<%= cause.id %>">
 					Hits: <%= cause.hits %>
@@ -51,6 +53,7 @@
 				<div class="row cause-stats">
 					Hit Impact: $<%= '%.2f' % cause.unit_donation %>
 				</div>
+				<br>
 				<br>
 				<div class="row cause-stats">
 					<%= link_to "Edit", edit_cause_path(cause), class: 'btn btn-large btn-success' %>
