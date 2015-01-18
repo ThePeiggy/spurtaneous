@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   	cause.add_hit
   	#take money out
   end
+
+  def add_point
+    update_attribute(:points, points + 1)
+  end
 end
