@@ -5,9 +5,12 @@ class CausesController < ApplicationController
 	before_filter :authorize
 
 	def index
-		@causes = Cause.available(current_user.limit)
+		@causes = Cause.all
 		if params[:filter] == 'today'
 			@causes = @causes.today
+		end
+		if params[:filter] == 'available'
+			@causes = @causes.available(current_user.limit)
 		end
 		if params[:filter] == 'abandoned'
 			@causes = @causes.abandoned
