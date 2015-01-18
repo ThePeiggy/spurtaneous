@@ -6,14 +6,20 @@
       <%= f.label :name %><br>
       <%= f.text_field :name, placeholder: @cause.name %>
     </p>
-
+    
     <p>
-      <%= f.label :description %><br>
-      <%= f.text_field :description, placeholder: @cause.description %>
+      <%= f.label :location %><br>
+      <%= f.text_field :location, placeholder: @cause.location %>
     </p>
 
     <p>
-      <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+      <%= f.label :description %><br>
+      <%= f.text_area :description, :cols => "70", :rows => "10", :maxlength=>"750", placeholder: @cause.description %><br>
+      <i>  ~ Max 150 words</i>
+    </p>
+
+    <p>
+      <%= f.submit "Submit", class: "btn btn-lg btn-success" %>
     </p>
   <% end %>
 

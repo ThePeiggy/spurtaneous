@@ -1,11 +1,18 @@
 	<div class="jumbotron">
 		<div class="container-fluid">
 			<div class="row top-align">
-				<div class="col-sm-4">
-					<strong>Name:</strong>
- 					<%= @user.firstname + ' ' + @user.lastname %> <br>
-				  <strong>Email:</strong>
-				  <%= @user.email %>
+				<strong><div class = "namies"><%= @user.firstname + ' ' + @user.lastname %> </div></strong>	
+ 				<div class = "userpage">
+					<strong>Registered Email:</strong>
+					<%= @user.email %><br>
+				 	<strong>Location:</strong>
+				 	<%= @user.location %>
+				  <strong>Limit:</strong>
+				  <%= @user.limit %> <br>
+				  <strong>Points:</strong>
+				  <%= @user.points %> <br>
+				  <%= link_to "Edit", edit_user_path(@user), class: 'btn btn-large btn-primary' %>
+				  <%= link_to "Back", '..', class: 'btn btn-large btn-primary' %>				  				  
 				</div>
 			</div>
 		</div>
@@ -29,7 +36,9 @@
 		</div>
 		<div class="col-md-5">
 			<div class="row top-align">
-				<%= image_tag(cause.image) %>
+				<div class = "causeimage">
+					<%= image_tag(cause.image) %>
+				</div>
 			</div>
 		</div>
 			<div class="col-md-2">
@@ -44,7 +53,7 @@
 				</div>
 				<br>
 				<div class="row cause-stats">
-					<%= link_to "Edit", edit_cause_path(cause), class: 'btn btn-large btn-primary' %>
+					<%= link_to "Edit", edit_cause_path(cause), class: 'btn btn-large btn-success' %>
 				</div>
 			</div>
 		</div>

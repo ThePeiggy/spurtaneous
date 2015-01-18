@@ -1,0 +1,32 @@
+<h1> Edit User </h1>
+<div class="center" margin-top="100px">
+  <%= form_for :user, url: user_path(@user), method: :patch do |f| %>
+
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :firstname, placeholder: @user.firstname %>
+      <%= f.text_field :lastname, placeholder: @user.lastname %>
+    </p>
+
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email, placeholder: @user.email %>
+    </p>
+
+    <p>
+      <%= f.label :location %><br>
+      <%= f.text_field :location, placeholder: @user.location %>
+    </p>
+
+    <p>
+      <%= f.label :limit %><br>
+      <%= f.text_field :limit, placeholder: @user.limit %>
+    </p>
+
+    <p>
+      <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Cancel', user_path(@user) %>
+</div>

@@ -7,10 +7,15 @@
 			<div class="row top-align">
 				<%= @cause.description %>
 			</div>
+			<div class="row top-align">
+				<%= @cause.location %>
+			</div>
 		</div>
 		<div class="col-md-5">
 			<div class="row top-align">
-				<%= image_tag(@cause.image) %>
+				<div class="causeimage">
+					<%= image_tag(@cause.image) %>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-2">
@@ -25,7 +30,7 @@
 			</div>
 			<br>
 			<div class="row cause-stats">
-				<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-primary', id: "button", path: add_hit_cause_path(@cause), hits_id: "num_hits", raised_id: "money_raised", button_id: "button" %>
+				<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-success', id: "button", path: add_hit_cause_path(@cause), hits_id: "num_hits", raised_id: "money_raised", button_id: "button" %>
 			</div>
 		</div>
 	</div>
