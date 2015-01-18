@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-	user = User.new(email: "admin@example.com", password: "password", password_confirmation: "password", firstname: "Admin", lastname: "User", location: "Detroit, MI")
+	user = User.new(email: "admin@example.com", password: "password", password_confirmation: "password", firstname: "Admin", lastname: "User", location: "Detroit, MI", limit:1.00)
 	user.save
 	user.causes.new(name: "Single Parents’ Free Daycare", description: "SPFD is a non-profit organization started by Martha 
 							Kinsley. When she was 32, her husband was sent to prison. She then became a single mother, 
