@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     get :add_hit, on: :member
   end
 
+  resources :rewards, only: [:index]
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
