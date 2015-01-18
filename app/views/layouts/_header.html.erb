@@ -3,7 +3,7 @@
     <% if @current_user %>
       <div class="container">
           <div class="image">
-            <img src="<%= asset_path( '/assets/spurtaneous.png' ) %>" />
+            <%= link_to image_tag("/assets/spurtaneous.png"), '../login' %>
           </div>
         <nav>
           <ul class="nav navbar-nav navbar-right">
@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
           </button>
           <div class="image">
-            <img src="<%= asset_path( '/assets/spurtaneous.png' ) %>" />
+            <%= link_to image_tag("/assets/spurtaneous.png"), '../login' %>
           </div>       </div> <!-- end div class="navbar-header" -->
         
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
