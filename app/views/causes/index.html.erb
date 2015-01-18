@@ -2,21 +2,23 @@
 	<div class="jumbotron">
 		<div class="container-fluid">
 			<div class="col-md-5">
-			<div class="row top-align">
-				<h3><%= cause.name %></h3>
-			</div>
-			<div class="row top-align">
-				<%= cause.location %>
-			</div>
-			<div class="row top-align">
-				<%= cause.description %>
-			</div>
+				<div class="row top-align">
+					<h3><%= link_to cause.name, cause_path(cause)%></h3>
+				</div>
+				<div class="row top-align">
+					<%= cause.location %>
+				</div>
+				<div class="row top-align">
+					<%= cause.description %>
+				</div>
 			</div>
 			<div class="col-md-5">
-			<div class="row top-align">
-				<%= image_tag(cause.image) %>
+				<div class="row top-align">
+					<div class="causeimage">
+						<%= image_tag(cause.image) %>
+					</div>		
+				</div>
 			</div>
-		</div>
 			<div class="col-md-2">
 				<div class="row cause-stats" id="num_hits_<%= cause.id %>">
 					Hits: <%= cause.hits %>
@@ -52,7 +54,26 @@
 	            	document.getElementById(button_id).innerHTML = "Pummel"
 	            }
 	        });
+	    });
+	});
+</script>
 
+<script>
+	$(function () {
+	    $("a[data-remote]").on('click', function () {
+	    	hits_id = $(this).attr("hits_id")
+	    	raised_id = $(this).attr("raised_id")
+	    	button_id = $(this).attr("button_id")
+	    	$.ajax({
+	            url: $(this).attr("path"),
+	            type:"get",
+            	dataType:"json",
+	            success: function(data) {
+	            	document.getElementById(hits_id).innerHTML = "Hits: " + data.hits
+	            	document.getElementById(raised_id).innerHTML = "Raised: $" + data.money_raised.toFixed(2)
+	            	document.getElementById(button_id).innerHTML = "Pummel"
+	            }
+	        });
 	    });
 	});
 </script>

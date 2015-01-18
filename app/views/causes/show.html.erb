@@ -5,15 +5,17 @@
 				<h3><%= @cause.name %></h3>
 			</div>
 			<div class="row top-align">
-				<%= cause.location %>
+				<%= @cause.description %>
 			</div>
 			<div class="row top-align">
-				<%= @cause.description %>
+				<%= @cause.location %>
 			</div>
 		</div>
 		<div class="col-md-5">
 			<div class="row top-align">
-				<%= image_tag(@cause.image) %>
+				<div class="causeimage">
+					<%= image_tag(@cause.image) %>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-2">
