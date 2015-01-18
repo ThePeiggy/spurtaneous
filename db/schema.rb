@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150117123343) do
     t.integer  "user_id"
     t.string   "name",                      null: false
     t.text     "description",               null: false
+    t.text     "image"
     t.float    "unit_donation",             null: false
     t.integer  "hits",          default: 0
     t.datetime "created_at",                null: false
