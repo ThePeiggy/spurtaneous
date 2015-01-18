@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :venmo_token
       t.string :firstname, null: false
       t.string :lastname, null: false
+      t.string :location
 
       t.timestamps null: false
     end
