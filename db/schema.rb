@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150118041737) do
     t.string   "name",                      null: false
     t.text     "description",               null: false
     t.text     "image"
+    t.string   "location"
     t.float    "unit_donation",             null: false
     t.integer  "hits",          default: 0
     t.datetime "created_at",                null: false
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150118041737) do
     t.string   "venmo_token"
     t.string   "firstname",                   null: false
     t.string   "lastname",                    null: false
+    t.string   "location"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.string   "password_digest"

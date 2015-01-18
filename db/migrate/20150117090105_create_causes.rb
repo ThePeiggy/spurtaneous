@@ -5,6 +5,7 @@ class CreateCauses < ActiveRecord::Migration
       t.string :name, null: false
       t.text :description, null: false
       t.text :image
+      t.string :location
       t.float :unit_donation, null:false
       t.integer :hits, default: 0
 
