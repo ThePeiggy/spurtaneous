@@ -1,7 +1,7 @@
 <h1> Create a new user </h1>
 <div class="center" margin-top="100px">
   <%= form_for :user, url: users_path do |f| %>
-    
+
     <p>
       <%= f.label :firstname %><br>
       <%= f.text_field :firstname, placeholder: "Tom" %>
@@ -16,7 +16,7 @@
       <%= f.label :email %><br>
       <%= f.text_field :email, placeholder: "example@email.com" %>
     </p>
-   
+
     <p>
       <%= f.label :password %><br>
       <%= f.password_field :password, placeholder: "password" %>
@@ -26,7 +26,7 @@
       <%= f.label :password_confirmation %><br>
       <%= f.password_field :password_confirmation, placeholder: "password" %>
     </p>
-   
+
     <p>
       <%= f.submit "Register", class: "btn btn-lg btn-primary" %>
     </p>
