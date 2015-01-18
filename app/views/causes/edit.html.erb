@@ -14,11 +14,12 @@
 
     <p>
       <%= f.label :description %><br>
-      <%= f.text_field :description, placeholder: @cause.description %>
+      <%= f.text_area :description, :cols => "70", :rows => "10", :maxlength=>"750", placeholder: @cause.description %><br>
+      <i>  ~ Max 150 words</i>
     </p>
 
     <p>
-      <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+      <%= f.submit "Submit", class: "btn btn-lg btn-success" %>
     </p>
   <% end %>
 

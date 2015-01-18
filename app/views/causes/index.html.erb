@@ -3,7 +3,9 @@
 		<div class="container-fluid">
 			<div class="col-md-5">
 				<div class="row top-align">
-					<h3><%= link_to cause.name, cause_path(cause)%></h3>
+					
+						<h3><%= link_to cause.name, cause_path(cause)%></h3>
+					
 				</div>
 				<div class="row top-align">
 					<%= cause.location %>
@@ -31,7 +33,7 @@
 				</div>
 				<br>
 				<div class="row cause-stats">
-					<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-primary', id: "button_" + cause.id.to_s, path: add_hit_cause_path(cause), hits_id: "num_hits_" + cause.id.to_s, raised_id: "money_raised_" + cause.id.to_s, button_id: "button_" + cause.id.to_s %>
+					<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-success', id: "button_" + cause.id.to_s, path: add_hit_cause_path(cause), hits_id: "num_hits_" + cause.id.to_s, raised_id: "money_raised_" + cause.id.to_s, button_id: "button_" + cause.id.to_s %>
 				</div>
 			</div>
 		</div>
