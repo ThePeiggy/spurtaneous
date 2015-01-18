@@ -3,9 +3,9 @@
 		<div class="container-fluid">
 			<div class="col-md-5">
 				<div class="row top-align">
-					
+
 						<h3><%= link_to cause.name, cause_path(cause)%></h3>
-					
+
 				</div>
 				<div class="row top-align">
 					<%= cause.location %>
@@ -18,7 +18,7 @@
 				<div class="row top-align">
 					<div class="causeimage">
 						<%= image_tag(cause.image) %>
-					</div>		
+					</div>
 				</div>
 			</div>
 			<div class="col-md-2">
@@ -31,11 +31,9 @@
 				<div class="row cause-stats">
 					Hit Impact: $<%= '%.2f' % cause.unit_donation %>
 				</div>
-				<div class="row cause-stats" id = "message_<%= cause.id %>">
-				</div>
 				<br>
 				<div class="row cause-stats">
-					<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-success', id: "button_" + cause.id.to_s, path: add_hit_cause_path(cause), hits_id: "num_hits_" + cause.id.to_s, raised_id: "money_raised_" + cause.id.to_s, button_id: "button_" + cause.id.to_s, message_id: "message_" + cause.id.to_s %>
+					<%= link_to "Hit", '#', remote: true, class: 'btn btn-large btn-success', id: "button_" + cause.id.to_s, path: add_hit_cause_path(cause), hits_id: "num_hits_" + cause.id.to_s, raised_id: "money_raised_" + cause.id.to_s, button_id: "button_" + cause.id.to_s%>
 				</div>
 			</div>
 		</div>
@@ -54,11 +52,13 @@
 	            type:"get",
             	dataType:"json",
 	            success: function(data) {
+	            	if (data.success) {
 	            		document.getElementById(hits_id).innerHTML = "Hits: " + data.hits
 	            		document.getElementById(raised_id).innerHTML = "Raised: $" + data.money_raised.toFixed(2)
 	            		document.getElementById(button_id).innerHTML = "Pummel"
-	            		if (data.limit > -1)
-	            			document.getElementById(message_id).innerHTML = "Dear user, unfortunately, your limit of $" + data.limit + " is not enough to make a difference. You dumb sack of shit"
+	            	} else {
+	            		alert("Sorry, your donation limit is " + data.limit + " which is less than the hit cost of this cause.")
+	            	}
 	            }
 	        });
 	    });
