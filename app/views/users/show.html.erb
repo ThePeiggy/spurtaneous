@@ -5,12 +5,15 @@
 					<strong>Name:</strong>
  					<%= @user.firstname + ' ' + @user.lastname %> <br>
 				  <strong>Email:</strong>
-				  <%= @user.email %>
+				  <%= @user.email %> <br>
 				  <strong>Location:</strong>
-				  <%= @user.location %>
+				  <%= @user.location %> <br>
 				  <strong>Limit:</strong>
-				  <%= @user.limit %>
-				  <%= link_to "Edit", edit_user_path(@user), class: 'btn btn-large btn-primary' %>				  
+				  <%= @user.limit %> <br>
+				  <strong>Points:</strong>
+				  <%= @user.points %> <br>
+				  <%= link_to "Edit", edit_user_path(@user), class: 'btn btn-large btn-primary' %>
+				  <%= link_to "Back", '..', class: 'btn btn-large btn-primary' %>				  				  
 				</div>
 			</div>
 		</div>

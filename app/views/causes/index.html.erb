@@ -57,23 +57,3 @@
 	    });
 	});
 </script>
-
-<script>
-	$(function () {
-	    $("a[data-remote]").on('click', function () {
-	    	hits_id = $(this).attr("hits_id")
-	    	raised_id = $(this).attr("raised_id")
-	    	button_id = $(this).attr("button_id")
-	    	$.ajax({
-	            url: $(this).attr("path"),
-	            type:"get",
-            	dataType:"json",
-	            success: function(data) {
-	            	document.getElementById(hits_id).innerHTML = "Hits: " + data.hits
-	            	document.getElementById(raised_id).innerHTML = "Raised: $" + data.money_raised.toFixed(2)
-	            	document.getElementById(button_id).innerHTML = "Pummel"
-	            }
-	        });
-	    });
-	});
-</script>
