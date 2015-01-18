@@ -5,7 +5,14 @@ class CausesController < ApplicationController
 	before_filter :authorize
 
 	def index
-		@causes = Cause.all
+		@causes = nil
+		if params[:filter] == 'today'
+			@causes = Cause.today
+		elsif params[:filter] == 'abandoned'
+			@causes = Cause.abandoned
+		else
+			@causes = Cause.all
+		end
 	end
 
 	def add_hit
