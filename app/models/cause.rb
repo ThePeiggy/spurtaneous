@@ -11,6 +11,10 @@ class Cause < ActiveRecord::Base
 		update_attribute(:hits, hits + 1)
 	end
 
+	def self.available(limit)
+		return where("unit_donation <= ?", limit)
+	end
+
 	def money_raised
 		hits * unit_donation
 	end
