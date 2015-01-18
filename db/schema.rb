@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118041737) do
+ActiveRecord::Schema.define(version: 20150118115312) do
 
   create_table "causes", force: :cascade do |t|
     t.integer  "user_id"
@@ -26,15 +26,16 @@ ActiveRecord::Schema.define(version: 20150118041737) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                       null: false
+    t.string   "email",                         null: false
     t.string   "venmo_token"
-    t.string   "firstname",                   null: false
-    t.string   "lastname",                    null: false
+    t.string   "firstname",                     null: false
+    t.string   "lastname",                      null: false
     t.string   "location"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "password_digest"
     t.integer  "points",          default: 0
+    t.decimal  "limit",           default: 1.0
   end
 
 end
