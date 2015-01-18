@@ -10,9 +10,16 @@ class CausesController < ApplicationController
 
 	def add_hit
 		cause = Cause.find(cause_id_param)
-		cause.add_hit
-		current_user.add_point
-		respond_with hits: cause.hits, money_raised: cause.money_raised
+		price = cause.unit_donation
+		limit = current_user.limit
+		success = -1
+		if price <= limit
+			cause.add_hit
+			current_user.add_point
+			respond_with limit: success, hits: cause.hits, money_raised: cause.money_raised
+		else
+			respond_with limit: limit, hits: cause.hits, money_raised: cause.money_raised
+		end
 	end
 
 	def show

@@ -1,16 +1,18 @@
 	<div class="jumbotron">
 		<div class="container-fluid">
 			<div class="row top-align">
-
 				<strong><div class = "namies"><%= @user.firstname + ' ' + @user.lastname %> </div></strong>	
  				<div class = "userpage">
 					<strong>Registered Email:</strong>
 					<%= @user.email %><br>
 				 	<strong>Location:</strong>
-				 	<%= @user.location %><br>
-					<strong>Limit:</strong>
-				  	<%= @user.limit %>
-				  	<%= link_to "Edit", edit_user_path(@user), class: 'btn btn-large btn-warning' %>				  
+				 	<%= @user.location %>
+				  <strong>Limit:</strong>
+				  <%= @user.limit %> <br>
+				  <strong>Points:</strong>
+				  <%= @user.points %> <br>
+				  <%= link_to "Edit", edit_user_path(@user), class: 'btn btn-large btn-primary' %>
+				  <%= link_to "Back", '..', class: 'btn btn-large btn-primary' %>				  				  
 				</div>
 			</div>
 		</div>
