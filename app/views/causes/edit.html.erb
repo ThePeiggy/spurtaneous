@@ -1,0 +1,26 @@
+<h1> Edit Cause </h1>
+<div class="center" margin-top="100px">
+  <%= form_for :cause, url: cause_path(@cause), method: :patch do |f| %>
+
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name, placeholder: @cause.name %>
+    </p>
+
+    <p>
+      <%= f.label :description %><br>
+      <%= f.text_field :description, placeholder: @cause.description %>
+    </p>
+
+    <p>
+      <%= f.label :unit_donation %><br>
+      <%= f.text_field :unit_donation, placeholder: @cause.unit_donation %>
+    </p>
+
+    <p>
+      <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Cancel', cause_path(@cause) %>
+</div>

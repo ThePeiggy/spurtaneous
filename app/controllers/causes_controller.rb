@@ -21,4 +21,23 @@ class CausesController < ApplicationController
     def cause_id_param
     	params.require(:id)
     end
+
+    def edit
+    	@cause = Cause.find(params[:id])
+    end
+
+    def update
+	  @cause = Cause.find(params[:id])
+
+	  if @cause.update(cause_params)
+	    redirect_to @cause
+	  else
+	    render 'edit'
+	  end
+	end
+
+	private
+	  def cause_params
+	    params.require(:cause).permit(:name, :description, :unit_donation)
+	  end
 end
