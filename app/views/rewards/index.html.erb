@@ -1,1 +1,24 @@
-<p>Points: <%= @points %></p>
+<div class="jumbotron">
+    <div class="container-fluid">
+        <div class="row top-align">
+            <strong><div class = "namies"><%= @current_user.firstname + ' ' + @current_user.lastname %> </div></strong><br>
+        </div>
+        <div class="row top-align">
+            <div class="col-md-9">
+                <strong>Points: </strong> <%= @points %> <br>
+                
+                <strong>Points Today: </strong> <%= @points %> <br>
+                
+                <strong>Points This Week: </strong> <%= @points %> <br>
+                
+                <strong>Rank: </strong> Budding Benefactor <br>
+                
+                <strong>Points Until Next Rank: </strong> 10 <br>
+            </div>
+            <div class="col-md-3">
+                <%= image_tag("http://images.clipartpanda.com/star-trophy-clipart-l_10.gif", width: '110%', height: '110%' )%>
+            </div>
+        </div>
+    </div>
+
+</div>

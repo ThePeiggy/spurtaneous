@@ -10,7 +10,7 @@
 				  <strong>Limit:</strong>
 				  <%= @user.limit %> <br>
 				  <strong>Points:</strong>
-				  <%= @user.points %> <br>
+				  <%= link_to @user.points, rewards_path %> <br>
 				  <br>
 				  <%= link_to "Back", '..', class: 'btn btn-large btn-primary' %>
 				  <%= link_to "Edit", edit_user_path(@user), class: 'btn btn-large btn-primary' %>
