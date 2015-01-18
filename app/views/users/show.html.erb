@@ -8,6 +8,9 @@
 				  <%= @user.email %>
 				  <strong>Location:</strong>
 				  <%= @user.location %>
+				  <strong>Limit:</strong>
+				  <%= @user.limit %>
+				  <%= link_to "Edit", edit_user_path(@user), class: 'btn btn-large btn-primary' %>				  
 				</div>
 			</div>
 		</div>
