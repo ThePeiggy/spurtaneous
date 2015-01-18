@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   before_filter :authorize, only: [:show]
 
   def show
@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.location = "Ann Arbor, MI"
     if @user.save
-      redirect_to @user
+      session[:user_id] = @user.id
+      redirect_to 'https://api.venmo.com/v1/oauth/authorize?client_id=2275&scope=make_payments'
     else
       render 'new'
     end
