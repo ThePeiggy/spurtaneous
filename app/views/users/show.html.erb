@@ -31,6 +31,10 @@
 				<div class="row cause-stats">
 					Hit Impact: $<%= '%.2f' % cause.unit_donation %>
 				</div>
+				<br>
+				<div class="row cause-stats">
+					<%= link_to "Edit", edit_cause_path(cause), class: 'btn btn-large btn-primary' %>
+				</div>
 			</div>
 		</div>
 	</div>

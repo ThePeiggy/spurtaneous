@@ -30,7 +30,7 @@ class CausesController < ApplicationController
 	  @cause = Cause.find(params[:id])
 
 	  if @cause.update(cause_params)
-	    redirect_to @cause
+	    redirect_to current_user
 	  else
 	    render 'edit'
 	  end
