@@ -1,7 +1,7 @@
 	<div class="jumbotron">
 		<div class="container-fluid">
 			<div class="row top-align">
-				<strong><div class = "namies"><%= @user.firstname + ' ' + @user.lastname %> </div></strong>	
+				<strong><div class = "namies"><%= @user.firstname + ' ' + @user.lastname %> </div></strong>
  				<div class = "userpage">
 					<strong>Registered Email:</strong>
 					<%= @user.email %><br>
@@ -11,19 +11,19 @@
 				  <%= @user.limit %> <br>
 				  <strong>Points:</strong>
 				  <%= @user.points %> <br>
+				  <br>
+				  <%= link_to "Back", '..', class: 'btn btn-large btn-primary' %>
 				  <%= link_to "Edit", edit_user_path(@user), class: 'btn btn-large btn-primary' %>
-				  <%= link_to "Back", '..', class: 'btn btn-large btn-primary' %>				  				  
+				  <%= link_to "New Cause", new_cause_path, class: 'btn btn-large btn-primary' %>
 				</div>
 			</div>
 		</div>
 	</div>
 
 
-
-
 <% @user.causes.each do |cause| %>
 	<div class="jumbotron">
-		
+
 		<div class="container-fluid">
 
 			<div class="col-md-5">

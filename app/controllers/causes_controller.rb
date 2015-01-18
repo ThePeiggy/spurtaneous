@@ -39,6 +39,23 @@ class CausesController < ApplicationController
     	@cause = Cause.find(params[:id])
     end
 
+    def new
+    	@cause = current_user.causes.new
+    end
+
+    def create
+    	@cause = current_user.causes.new(cause_params)
+	    respond_to do |format|
+	      if @cause.save
+	        format.html { redirect_to current_user, notice: 'Cause was successfully created.' }
+	        format.json { render :show, status: :created, location: @cause }
+	      else
+	        format.html { render :new }
+	        format.json { render json: @cause.errors, status: :unprocessable_entity }
+	      end
+	    end
+    end
+
     def update
 	  @cause = Cause.find(params[:id])
 
@@ -51,6 +68,6 @@ class CausesController < ApplicationController
 
 	private
 	  def cause_params
-	    params.require(:cause).permit(:name, :description)
+	    params.require(:cause).permit(:name, :description, :location, :unit_donation)
 	  end
 end
