@@ -34,7 +34,7 @@ class CausesController < ApplicationController
 	  else
 	    render 'edit'
 	  end
-	end
+    end
 
 	private
 	  def cause_params
